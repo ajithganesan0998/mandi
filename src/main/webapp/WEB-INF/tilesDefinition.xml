@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>  
+     <!-- Main Page -->
+  
+   <!-- Template Definition -->
+   <definition name="homeLayout"
+       template="/WEB-INF/jsp/defaultLayout.jsp">  
+       <put-attribute name="title" value="" />  
+       <put-attribute name="header" value="/WEB-INF/jsp/defaultHeader.jsp" />  
+       <put-attribute name="body" value="" />  
+       <put-attribute name="footer" value="/WEB-INF/jsp/defaultFooter.jsp" />  
+   </definition>  
+   
+   <definition name="loginlayout"
+       template="/WEB-INF/jsp/loginLayout.jsp">  
+       <put-attribute name="body" value="" />  
+       <put-attribute name="footer" value="/WEB-INF/jsp/defaultFooter.jsp" />  
+   </definition>  
+  
+  <definition name="mandiHome" extends = "loginlayout">  
+       <put-attribute name="body" value="/WEB-INF/jsp/mandiHome.jsp" />  
+   </definition> 
+   
+      <definition name="mandilandingPage" extends="homeLayout">  
+       <put-attribute name="title" value="Welcome" />  
+       <put-attribute name="body" value="/WEB-INF/jsp/mandilandingPage.jsp" />  
+   </definition>
+   
+     <definition name="mandiDashBoard" extends="homeLayout">  
+       <put-attribute name="title" value="Welcome" />  
+       <put-attribute name="body" value="/WEB-INF/jsp/mandiDashBoard.jsp" />  
+   </definition>
+   
+        <definition name="newUserReg" extends="loginlayout">  
+       <put-attribute name="title" value="Farmer Mandi" />  
+       <put-attribute name="body" value="/WEB-INF/jsp/newUserReg.jsp" />  
+   </definition>
+  
+  
+</tiles-definitions>

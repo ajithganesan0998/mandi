@@ -1,0 +1,13 @@
+
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: black;
+      color: white;
+      padding: 15px;
+      height : 25;
+    }
+    
+    .footerclass {
+			background-color: black;
+			height: 40
+		}
