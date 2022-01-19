@@ -37,25 +37,10 @@ public class ConfigurationJava implements WebMvcConfigurer {
 		registry.viewResolver(viewResolver);
 	}
 	 
-		/*
-		 * @Bean public ViewResolver internalResourceViewResolver() {
-		 * InternalResourceViewResolver bean = new InternalResourceViewResolver();
-		 * bean.setViewClass(JstlView.class); bean.setPrefix("/WEB-INF/jsp/");
 		
-		 * bean.setSuffix(".jsp"); return bean; }
-		 */
-		/*
-		 * @Bean(name = "dataSource1") DataSource dataSource() { DriverManagerDataSource
-		 * driverManagerDataSource = new DriverManagerDataSource();
-		 * driverManagerDataSource.setUrl("jdbc:mysql://localhost:3306/world");
-		 * driverManagerDataSource.setUsername("root");
-		 * driverManagerDataSource.setPassword("root");
-		 * driverManagerDataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-		 * return driverManagerDataSource; }
-		 */
 	
 	@Bean
-	DataSource dataSource1() {
+	DataSource dataSource() {
 		DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
 		driverManagerDataSource.setUrl("jdbc:mysql://localhost:3306/sakila");
 		driverManagerDataSource.setUsername("root");
@@ -65,16 +50,10 @@ public class ConfigurationJava implements WebMvcConfigurer {
 	}
 	
 
-	/*
-	 * @Bean(name = "jbcTemplatenew") public JdbcTemplate
-	 * jdbcTemplate(@Qualifier("dataSource1") DataSource ds) { JdbcTemplate
-	 * jdbcTemplate = new JdbcTemplate(ds);
-	 * 
-	 * return jdbcTemplate; }
-	 */
+
 	
 	@Bean
-	public JdbcTemplate jbcTemplateOld(DataSource dataSource) {
+	public JdbcTemplate jbcTemplate(DataSource dataSource) {
         JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 
 		return jdbcTemplate;
